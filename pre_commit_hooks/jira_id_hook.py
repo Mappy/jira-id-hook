@@ -40,5 +40,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python add_branch_name.py <commit_msg_file>")
         sys.exit(1)
-
+    print(f"usage 1:{sys.argv[0]} 2:{sys.argv[1]}End")
     main(sys.argv[1])
