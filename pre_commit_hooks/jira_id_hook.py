@@ -21,7 +21,7 @@ def main():
     # Check for a pattern matching 'something_' after a '/'
     if re.search(r'\/.+-', branch_name):
         # Extract the prefix from the branch name (everything after the first '/' and before the first '_')
-        match = re.search(r'.*\/([[:alnum:]]+-[0-9]+)-.*', branch_name)
+        match = re.search(r'.*\/([A-Z]+-\d+).*', branch_name)
         if match:
             prefix = match.group(1)
 
@@ -34,6 +34,7 @@ def main():
                         print("Prefix already set, it's good")
                     elif commit_msg:
                         # Prefix the commit message with the branch prefix
+                        print("Update commit message")
                         file.seek(0)
                         file.write(f"{prefix} {commit_msg}\n")
                         file.truncate()
