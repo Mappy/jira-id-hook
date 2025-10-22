@@ -1,0 +1,10 @@
+- id: jira-id-hook
+  name: Jira Id Hook
+  description: Description de ce que fait mon hook
+  entry: jira-id-hook
+  language: python
+  # files: \.(py|js|ts)$  # Regex des fichiers concernés
+  # Optionnel:
+  # pass_filenames: true  # Passe les noms de fichiers au script
+  # require_serial: true  # Exécute en série plutôt qu'en parallèle
+  stages: [commit-msg]  # Quand exécuter le hook
