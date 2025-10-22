@@ -7,4 +7,4 @@
   # Optionnel:
   # pass_filenames: true  # Passe les noms de fichiers au script
   # require_serial: true  # Exécute en série plutôt qu'en parallèle
-  stages: [prepare-commit-msg]  # Quand exécuter le hook
+  stages: [commit-msg] # Quand exécuter le hook
