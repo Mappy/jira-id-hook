@@ -10,7 +10,12 @@ def get_current_branch_name():
         sys.exit(1)
     return result.stdout.strip()
 
-def main(commit_msg_file):
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python add_branch_name.py <commit_msg_file>")
+        sys.exit(1)
+    print(f"usage 1:{sys.argv[0]} 2:{sys.argv[1]}End")
+    commit_msg_file=sys.argv[1]
     branch_name = get_current_branch_name()
 
     # Check for a pattern matching 'something_' after a '/'
@@ -36,9 +41,3 @@ def main(commit_msg_file):
                         print("Please set a comment for commit")
                         sys.exit(1)
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python add_branch_name.py <commit_msg_file>")
-        sys.exit(1)
-    print(f"usage 1:{sys.argv[0]} 2:{sys.argv[1]}End")
-    main(commit_msg_file=sys.argv[1])
