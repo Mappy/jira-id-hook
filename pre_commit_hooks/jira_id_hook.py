@@ -19,7 +19,7 @@ def main():
     branch_name = get_current_branch_name()
 
     # Check for a pattern matching 'something_' after a '/'
-    if re.search(r'\/.+-', branch_name):
+    if re.search(r'\/.+-', branch_name) and ('feature' in branch_name or 'bugfix' in branch_name):
         # Extract the prefix from the branch name (everything after the first '/' and before the first '_')
         match = re.search(r'.*\/([A-Z]+-\d+).*', branch_name)
         if match:
